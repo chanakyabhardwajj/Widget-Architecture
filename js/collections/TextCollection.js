@@ -5,10 +5,12 @@ define(["backbone", "models/TextModel"], function(Backbone, TextModel){
 		},
 		model : TextModel,
 		url: function(){
-			return "http://api.wordnik.com/v4/word.json/" + this.key + "/examples?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+			//return "http://api.wordnik.com/v4/word.json/" + this.key + "/examples?api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+            return "/text"
 		},
 		parse: function(resp, xhr) {
-			  return resp.examples;
+            console.log(resp)
+            return resp.data;
 		}
 	});
 
